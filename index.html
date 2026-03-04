@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Derrick — Work</title>
+<meta name="description" content="Cultural Storyteller, Creative Producer & Strategist. Video production, direction, and brand storytelling rooted in culture, community, and craft.">
+<meta property="og:title" content="Derrick — Selected Work">
+<meta property="og:description" content="Storytelling rooted in culture, community, and craft.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="photos/headshot.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Derrick — Selected Work">
+<meta name="twitter:description" content="Storytelling rooted in culture, community, and craft.">
+<meta name="twitter:image" content="photos/headshot.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0e0e0e; --surface: #161616; --surface-hover: #1e1e1e;
+    --border: #2a2a2a; --text: #e8e4de; --text-muted: #8a8580;
+    --accent: #c9ff57; --accent-dim: rgba(201, 255, 87, 0.08);
+    --font-body: 'DM Sans', sans-serif;
+    --font-display: 'Libre Caslon Display', serif;
+    --panel-width: 520px;
+  }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
+
+  /* NAV */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 48px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(14,14,14,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 100; }
+  .nav-name { font-family: var(--font-display); font-size: 22px; letter-spacing: -0.02em; }
+  .nav-name a { color: var(--text); text-decoration: none; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+  /* HERO */
+  .page-header { padding: 64px 48px 0; }
+  .page-header h1 { font-family: var(--font-display); font-size: clamp(48px, 6vw, 72px); font-weight: 400; letter-spacing: -0.03em; line-height: 1; margin-bottom: 16px; }
+  .page-header h1 em { font-style: italic; color: var(--accent); }
+  .page-header p { color: var(--text-muted); font-size: 16px; max-width: 500px; line-height: 1.6; }
+  .now-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(201,255,87,0.06); border: 1px solid rgba(201,255,87,0.15); padding: 6px 14px; border-radius: 100px; font-size: 12px; color: var(--accent); margin-top: 24px; font-weight: 500; }
+  .now-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  /* FILTERS */
+  .filter-section { padding: 48px 48px 0; }
+  .filter-bar { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
+  .filter-btn { background: transparent; border: 1px solid var(--border); color: var(--text-muted); padding: 8px 20px; border-radius: 100px; font-family: var(--font-body); font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.3s; }
+  .filter-btn:hover { color: var(--text); border-color: #444; }
+  .filter-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+  /* CARD GRID */
+  .bento-grid { padding: 0 48px 120px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 24px; }
+  .bento-card { cursor: pointer; opacity: 0; transform: translateY(16px); animation: fadeUp 0.5s cubic-bezier(0.16,1,0.3,1) forwards; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+  .bento-card:hover { transform: translateY(-4px); }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  .bento-card:nth-child(1) { animation-delay: 0.03s; } .bento-card:nth-child(2) { animation-delay: 0.06s; }
+  .bento-card:nth-child(3) { animation-delay: 0.09s; } .bento-card:nth-child(4) { animation-delay: 0.12s; }
+  .bento-card:nth-child(5) { animation-delay: 0.15s; } .bento-card:nth-child(6) { animation-delay: 0.18s; } .bento-card:nth-child(7) { animation-delay: 0.21s; }
+  .bento-card.hidden { display: none; }
+
+  /* Card image */
+  .bento-img-wrap { position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 16px; overflow: hidden; background: var(--surface); }
+  .bento-img { position: absolute; inset: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+  .bento-card:hover .bento-img { transform: scale(1.04); }
+
+  /* Image classes */
+  .img-peakbound1 { background: url('photos/ramirez-1.jpg') center/cover, linear-gradient(135deg, #1a2d1a 0%, #2e4626 50%, #476e3d 100%); }
+  .img-peakbound2 { background: url('photos/hopesf-1.jpg') center/cover, linear-gradient(135deg, #1a1a1a 0%, #2e2e2e 50%, #474747 100%); }
+  .img-reiner { background: linear-gradient(135deg, #2d1a1a 0%, #46262e 50%, #6e3d47 100%); }
+  .img-redbay { background: url('https://substackcdn.com/image/fetch/w_1200,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Febd7f09b-533f-4dff-8a16-fa24d27d88ae_491x450.jpeg') center/cover, linear-gradient(135deg, #1a1a1a 0%, #2e2416 50%, #47340f 100%); }
+  .img-miharu { background: url('https://substackcdn.com/image/fetch/w_1200,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F10c83676-5759-4110-8a1d-c17d4020e962_3024x4032.jpeg') center/cover, linear-gradient(135deg, #2d1b2a 0%, #462639 50%, #5c3d4a 100%); }
+  .img-euflora { background: url('https://substackcdn.com/image/fetch/w_1200,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff734ea66-05f2-4f24-a207-52fe6874046d.jpeg') center/cover, linear-gradient(135deg, #1b2d1b 0%, #264626 50%, #3d5c3d 100%); }
+  .img-rms { background: url('https://img.youtube.com/vi/T6civHHyHTo/maxresdefault.jpg') center/cover, linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+
+  /* Card text below image */
+  .bento-info { padding: 16px 4px 0; }
+  .bento-title { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; line-height: 1.25; color: var(--text); margin-bottom: 4px; }
+  .bento-teaser { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+
+  /* SLIDE-IN PANEL */
+  .panel-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; opacity: 0; pointer-events: none; transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1); }
+  .panel-backdrop.open { opacity: 1; pointer-events: all; }
+  .panel { position: fixed; top: 0; right: 0; width: var(--panel-width); max-width: 90vw; height: 100vh; background: var(--surface); border-left: 1px solid var(--border); z-index: 201; transform: translateX(100%); transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); overflow-y: auto; overscroll-behavior: contain; }
+  .panel.open { transform: translateX(0); }
+  .panel-close { position: sticky; top: 0; display: flex; justify-content: flex-end; padding: 20px 24px 12px; background: linear-gradient(to bottom, var(--surface) 60%, transparent); z-index: 2; }
+  .panel-close button { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; font-size: 18px; font-family: var(--font-body); }
+  .panel-close button:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+  .panel-hero-img { width: 100%; aspect-ratio: 16/10; background-size: cover; background-position: center; }
+
+  /* CAROUSEL */
+  .panel-carousel { position: relative; width: 100%; overflow: hidden; display: none; }
+  .panel-carousel.active { display: block; }
+  .carousel-track { display: flex; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+  .carousel-track img { width: 100%; flex-shrink: 0; aspect-ratio: 16/10; object-fit: cover; display: block; }
+  .carousel-controls { position: absolute; bottom: 12px; left: 0; right: 0; display: flex; justify-content: center; align-items: center; gap: 16px; z-index: 3; }
+  .carousel-btn { width: 32px; height: 32px; border-radius: 50%; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; font-size: 14px; font-family: var(--font-body); }
+  .carousel-btn:hover { background: rgba(0,0,0,0.7); border-color: rgba(255,255,255,0.3); }
+  .carousel-dots { display: flex; gap: 6px; }
+  .carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.3); transition: all 0.3s; }
+  .carousel-dot.active { background: var(--accent); width: 18px; border-radius: 3px; }
+
+  .panel-content { padding: 28px 28px 48px; }
+  .panel-tag { display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); background: var(--accent-dim); padding: 4px 10px; border-radius: 100px; margin-bottom: 14px; font-weight: 500; }
+  .panel-title { font-family: var(--font-display); font-size: 28px; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 6px; }
+  .panel-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; line-height: 1.5; }
+  .panel-meta a { color: var(--accent); text-decoration: underline; text-decoration-color: rgba(201,255,87,0.3); text-underline-offset: 2px; transition: text-decoration-color 0.3s; }
+  .panel-meta a:hover { text-decoration-color: var(--accent); }
+  .panel-role { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .panel-desc { font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 24px; }
+  .panel-desc a { color: var(--accent); text-decoration: underline; text-decoration-color: rgba(201,255,87,0.3); text-underline-offset: 2px; transition: text-decoration-color 0.3s; }
+  .panel-desc a:hover { text-decoration-color: var(--accent); }
+  .panel-contributions { margin-bottom: 28px; }
+  .panel-contributions h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 12px; font-weight: 500; }
+  .panel-contributions ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .panel-contributions li { font-size: 13px; line-height: 1.55; color: var(--text); padding-left: 16px; position: relative; }
+  .panel-contributions li::before { content: ''; position: absolute; left: 0; top: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+  .panel-why { margin-bottom: 28px; }
+  .panel-why h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 12px; font-weight: 500; }
+  .panel-why p { font-size: 14px; line-height: 1.7; color: var(--text); font-style: italic; }
+  .panel-proof { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: 1px solid var(--border); border-radius: 100px; font-size: 13px; font-weight: 500; color: var(--text); text-decoration: none; transition: all 0.3s; font-family: var(--font-body); }
+  .panel-proof:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+  .panel-proof svg { width: 14px; height: 14px; }
+  .panel-proof-pending { font-size: 12px; color: var(--text-muted); font-style: italic; }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 32px 48px; display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); font-size: 13px; position: fixed; bottom: 0; left: 0; right: 0; background: rgba(14,14,14,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 50; }
+  footer a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+  footer a:hover { color: var(--text); }
+  .footer-links { display: flex; gap: 24px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) { .bento-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; } }
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; } .nav-links { gap: 20px; } .nav-links a { font-size: 12px; }
+    .page-header { padding: 40px 24px 0; } .filter-section { padding: 36px 24px 0; }
+    .bento-grid { padding: 0 24px 120px; grid-template-columns: 1fr; gap: 32px; }
+    .panel { --panel-width: 100vw; } footer { padding: 20px 24px; flex-direction: column; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name"><a href="index.html">Derrick</a></div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <h1>Selected <em>Work</em></h1>
+  <p>Storytelling rooted in culture, community, and craft.</p>
+  <div class="now-badge"><span class="now-dot"></span> Currently building an archival creative studio and becoming a better storyteller</div>
+</div>
+
+<div class="filter-section">
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="video-production">Video Production</button>
+    <button class="filter-btn" data-filter="direction-production">Direction & Production</button>
+    <button class="filter-btn" data-filter="brand-story-creative-direction">Brand Story Creative Direction</button>
+  </div>
+</div>
+
+<div class="bento-grid" id="bentoGrid">
+  <div class="bento-card" data-category="video-production" data-project="peakbound-ramirez">
+    <div class="bento-img-wrap"><div class="bento-img img-peakbound1"></div></div>
+    <div class="bento-info"><div class="bento-title">Peakbound Studios &times; Michele Ramirez</div><div class="bento-teaser">Documenting a painter's work exploring The Grapes of Wrath.</div></div>
+  </div>
+  <div class="bento-card" data-category="video-production" data-project="peakbound-sunnydale">
+    <div class="bento-img-wrap"><div class="bento-img img-peakbound2"></div></div>
+    <div class="bento-info"><div class="bento-title">Peakbound Studios &times; HOPE SF</div><div class="bento-teaser">Community voices along Mercy Housing's corridor.</div></div>
+  </div>
+  <div class="bento-card" data-category="video-production" data-project="reiner-fam">
+    <div class="bento-img-wrap"><div class="bento-img img-reiner"></div></div>
+    <div class="bento-info"><div class="bento-title">Reiner Films &times; Food as Medicine</div><div class="bento-teaser">Community voices behind the Food as Medicine mission.</div></div>
+  </div>
+  <div class="bento-card" data-category="direction-production" data-project="rms">
+    <div class="bento-img-wrap"><div class="bento-img img-rms"></div></div>
+    <div class="bento-info"><div class="bento-title">RMS &mdash; Artist Feature</div><div class="bento-teaser">Identity through sound.</div></div>
+  </div>
+  <div class="bento-card" data-category="brand-story-creative-direction" data-project="redbay">
+    <div class="bento-img-wrap"><div class="bento-img img-redbay"></div></div>
+    <div class="bento-info"><div class="bento-title">Red Bay Coffee & Keba Konte</div><div class="bento-teaser">Liberation through commerce.</div></div>
+  </div>
+  <div class="bento-card" data-category="brand-story-creative-direction" data-project="miharu">
+    <div class="bento-img-wrap"><div class="bento-img img-miharu"></div></div>
+    <div class="bento-info"><div class="bento-title">Miharu Ice Cream & Dipen Pattni</div><div class="bento-teaser">Cultural memory you can taste.</div></div>
+  </div>
+  <div class="bento-card" data-category="brand-story-creative-direction" data-project="euflora">
+    <div class="bento-img-wrap"><div class="bento-img img-euflora"></div></div>
+    <div class="bento-info"><div class="bento-title">Euflora & Celeste Fabros</div><div class="bento-teaser">Community as business model.</div></div>
+  </div>
+</div>
+
+<!-- SLIDE-IN PANEL -->
+<div class="panel-backdrop" id="panelBackdrop"></div>
+<div class="panel" id="panel">
+  <div class="panel-close"><button id="panelClose">&times;</button></div>
+  <div class="panel-hero-img" id="panelImg"></div>
+  <div class="panel-carousel" id="panelCarousel">
+    <div class="carousel-track" id="carouselTrack"></div>
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="carouselPrev">&#8249;</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+      <button class="carousel-btn" id="carouselNext">&#8250;</button>
+    </div>
+  </div>
+  <div class="panel-content">
+    <span class="panel-tag" id="panelTag"></span>
+    <div class="panel-title" id="panelTitle"></div>
+    <div class="panel-meta" id="panelMeta"></div>
+    <div class="panel-role" id="panelRole"></div>
+    <div class="panel-desc" id="panelDesc"></div>
+    <div class="panel-contributions" id="panelContributions">
+      <h4>What I Did</h4>
+      <ul id="panelContribList"></ul>
+    </div>
+    <div class="panel-why" id="panelWhy">
+      <h4>Why This Story Matters to Me</h4>
+      <p id="panelWhyText"></p>
+    </div>
+    <div id="panelProof"></div>
+  </div>
+</div>
+
+<footer>
+  <span>&copy; 2026 Derrick</span>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/_derrickchiu/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://youtube.com/@derrickchiu" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://linkedin.com/in/derrickchiu" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:chiu.derrick8@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+var projects = {
+  'peakbound-sunnydale': {
+    tag: 'Video Production',
+    title: 'Peakbound Studios \u00d7 HOPE SF',
+    meta: 'January 2026 &middot; San Francisco, CA<br><a href="https://peakbound.studio" target="_blank" rel="noopener">peakbound.studio</a> &middot; For <strong><a href="https://gosunnydale.org/community/development-plan/" target="_blank" rel="noopener">Sunnydale HOPE SF Development Plan</a></strong>',
+    role: 'Production Assistant \u00b7 Dir. Lorenzo Fernandez-Kopec',
+    img: 'img-peakbound2',
+    carousel: ['photos/hopesf-1.jpg','photos/hopesf-3.jpg','photos/hopesf-4.jpg','photos/hopesf-5.jpg','photos/hopesf-6.jpg'],
+    desc: 'An interview shoot with community entrepreneurs and stewards within Mercy Housing\u2019s business corridor, filmed at The Hub in Sunnydale.',
+    contributions: ['Scouted locations with the director to optimize lighting and audio for sit-down interviews','Helped put interviewees at ease, creating space for authentic, grounded responses on camera'],
+    whyItMatters: 'HOPE SF is a project that encapsulates the resilience and beauty of a community coming together \u2013 for each other, by each other, with each other. These aren\u2019t spokespeople reading talking points \u2013 they\u2019re people who\u2019ve built businesses and community in a neighborhood with an incredible history. The Sunnydale corridor is real San Francisco and full of stories that deserve to be told on their own terms. Being part of capturing that felt like exactly where I should be.',
+    proof: null, proofLabel: 'BTS photo coming soon'
+  },
+  'peakbound-ramirez': {
+    tag: 'Video Production',
+    title: 'Peakbound Studios \u00d7 Michele Ramirez',
+    meta: 'February 2026 &middot; Oakland, CA<br><a href="https://peakbound.studio" target="_blank" rel="noopener">peakbound.studio</a> &middot; For <strong><a href="https://suntup.press/about/" target="_blank" rel="noopener">Suntup Editions</a></strong>',
+    role: 'Production Assistant \u00b7 Dir. Lorenzo Fernandez-Kopec',
+    img: 'img-peakbound1',
+    carousel: ['photos/ramirez-bts-1.jpg','photos/ramirez-bts-2.jpg','photos/ramirez-bts-3.jpg','photos/ramirez-bts-4.jpg','photos/ramirez-bts-5.jpg','photos/ramirez-bts-vid-1.mp4','photos/ramirez-bts-vid-2.mp4','photos/ramirez-bts-vid-3.mp4'],
+    desc: 'An interview and in-home studio shoot with painter <a href="https://www.micheleramirezpaintings.com/artist-statement" target="_blank" rel="noopener">Michele Ramirez</a>, documenting her current work creating art to accompany a project exploring the lasting impact of The Grapes of Wrath.',
+    contributions: ['Adapted the artist\u2019s home studio into a functional interview and filming setup alongside the director','Helped maintain a relaxed, creative atmosphere so the artist could speak openly about her process and work'],
+    whyItMatters: 'There\u2019s something about watching someone work in their own space that you can\u2019t replicate in a public studio. Michele\u2019s paintings are deeply personal responses to literature and her journey, as well as her family\u2019s journey from Mexico to the United States, and her home is where that process lives. I had the privilege to be in that room while she talked through it \u2013 how Steinbeck\u2019s words become brushstrokes, how grief and beauty coexist on the same canvas \u2013 reminded me why I\u2019m doing this work. Some stories only come out when you meet people where they\u2019ve already been unfolding.',
+    proof: null, proofLabel: 'Link to video coming soon'
+  },
+  'reiner-fam': {
+    tag: 'Video Production',
+    title: 'Reiner Films \u00d7 Food as Medicine Collaborative',
+    meta: 'November 2025 &middot; San Francisco, CA<br><a href="https://michaelareiner.com" target="_blank" rel="noopener">michaelareiner.com</a> &middot; For <strong><a href="https://www.foodasmedicinecollaborative.org/about" target="_blank" rel="noopener">Food as Medicine Collaborative</a></strong>',
+    role: 'Production Assistant \u00b7 Dir. Michael Reiner',
+    img: 'img-reiner',
+    desc: 'An interview shoot, capturing community voices behind Food as Medicine Collaborative\u2019s mission, filmed at La Cocina in the Tenderloin.',
+    contributions: ['Collaborated on location scouting to balance strong visuals with clean audio capture','Adapted in real-time to various unforeseen equipment challenges that arose','Kept the energy relaxed on set so subjects could speak naturally about their work'],
+    whyItMatters: 'Food is one of the most honest ways people take care of each other. The people behind Food as Medicine aren\u2019t building a brand \u2013 they\u2019re feeding their community and trying to change how the system thinks about health. Filming at La Cocina in the Tenderloin grounded the whole production in a place where that work is actually happening. That\u2019s the kind of context I want every project I touch to have.',
+    proof: null, proofLabel: 'Link to video coming soon'
+  },
+  'redbay': {
+    tag: 'Brand Story Creative Direction',
+    title: 'Red Bay Coffee & Keba Konte',
+    meta: 'February 29, 2024 &middot; Oakland, CA<br><a href="https://archivallive.substack.com/p/redbay" target="_blank" rel="noopener">Archival Live</a> &middot; Theme: Liberation through commerce',
+    role: 'Writer / Interviewer',
+    img: 'img-redbay',
+    desc: 'I\u2019d been going to Red Bay\u2019s roastery for years before this conversation. Something about the energy always felt purposeful. I wanted to understand why. What I found: Keba organized anti-war rallies drawing tens of thousands before he ever touched a coffee bag. None of that is in the press coverage. All of it explains exactly how he built his company.',
+    contributions: ['Keba told me my outreach stood out because something authentic rang through \u2014 and that this was the kind of conversation he\u2019d been wanting to have as Red Bay hit its 10th anniversary','The piece gave him a space to connect his activist roots to his business philosophy in a way that hadn\u2019t been told before'],
+    whyItMatters: 'This was the fifth feature I created through Archival Live, and it set the template for everything that followed: go to the places I\u2019m already drawn to, ask the questions no one else is asking, and trust that the real story is underneath the one everyone already knows.',
+    proof: 'https://archivallive.substack.com/p/redbay', proofLabel: 'Read the full story'
+  },
+  'miharu': {
+    tag: 'Brand Story Creative Direction',
+    title: 'Miharu Ice Cream & Dipen Pattni',
+    meta: 'February 15, 2024 &middot; Oakland, CA<br><a href="https://archivallive.substack.com/p/miharu" target="_blank" rel="noopener">Archival Live</a> &middot; Theme: Cultural memory',
+    role: 'Writer / Interviewer',
+    img: 'img-miharu',
+    desc: 'I walked in a stranger and left convinced this was the best ice cream shop in the East Bay. I had to know how it got built. What I found: Dipen grew up in Tanzania, the son of Indian immigrants, eating rambutans and trading snacks with friends from a dozen different countries. Every flavor on Miharu\u2019s menu is a direct line back to that \u2014 and to Jessica\u2019s years building relationships with Central Valley farmers. This isn\u2019t fusion for the sake of it. It\u2019s an autobiography you can taste.',
+    contributions: ['Dipen was still early in his journey of finding his footing in Oakland\u2019s community when we sat down','The piece gave Miharu a full origin story \u2014 from the Cloud Kitchen on East 12th Street to the current storefront \u2014 for the first time, and helped connect them to an audience that could become regulars'],
+    whyItMatters: 'The experience of Dipen carrying his family\u2019s food culture into a new context \u2013 and trying to honor it while making it his own \u2013 that\u2019s something I understood immediately. Miharu isn\u2019t just an ice cream shop. It\u2019s what happens when someone decides their memories are worth building a business and community around.',
+    proof: 'https://archivallive.substack.com/p/miharu', proofLabel: 'Read the full story'
+  },
+  'euflora': {
+    tag: 'Brand Story Creative Direction',
+    title: 'Euflora & Celeste Fabros',
+    meta: 'January 29, 2024 &middot; Oakland, CA<br><a href="https://archivallive.substack.com/p/euflora" target="_blank" rel="noopener">Archival Live</a> &middot; Theme: Community as business model',
+    role: 'Writer / Interviewer',
+    img: 'img-euflora',
+    desc: 'I found out about Euflora over lunch with my good friend, Max (the husband of Celeste). By the time Celeste finished explaining what she\u2019d built, I knew I had to learn more about her story. What I found: Euflora started with a U-Haul full of succulents and a bedroom overflowing with plants, not some premeditated business plan. Every partnership, every collaboration, every decision since has been driven by the same instinct: the right people find each other when you stay open to the community around you.',
+    contributions: ['Celeste and her co-founder Clarisse hadn\u2019t had their full story told in one piece before we worked on this together','The piece captured not just what Euflora is, but why two Filipino-American women built it the way they did, and what that means for the communities they serve'],
+    whyItMatters: 'Euflora is proof that you don\u2019t need a traditional playbook to build something that lasts. Celeste and Clarisse built their entire business on trust, community, and showing up \u2013 no investors, no PR strategy, just two friends who believed the right people would find them if they stayed open. That\u2019s how I\u2019m trying to build too. This story reminded me that the best things grow from relationships and resonance, not business plans.',
+    proof: 'https://archivallive.substack.com/p/euflora', proofLabel: 'Read the full story'
+  },
+  'rms': {
+    tag: 'Direction & Production',
+    title: '<a href="https://www.officialrms.com/" target="_blank" rel="noopener">RMS</a>',
+    meta: '2025 &middot; Long Island City, Queens<br>Theme: Identity through sound',
+    role: 'Director / Interviewer / Editor',
+    img: 'img-rms',
+    desc: 'RMS directs all his own content. He\u2019d done podcast interviews before, but never a walk-and-talk: never something that put him in motion, in his element, on camera walking around LIC. What I found: an Indian-American artist from New Jersey whose roots as a filmmaker shape every song he makes. Each track is an audio journal, built to make his listeners feel less alone. Getting that on camera meant earning it first. We had an initial conversation before I ever turned the camera on, so by the time we walked through LIC together right before one of his biggest shows, he was ready to go somewhere real and raw.',
+    contributions: ['RMS told me I asked him the most profound questions he\u2019d been asked in an interview. For an artist whose entire mission is helping others feel seen, that meant everything','It was the first time he\u2019d been able to share that level of insight into his journey and process in a single conversation'],
+    whyItMatters: 'This was my first time directing, filming, and editing an entire project on my own. Everything before this, I was assisting someone else\u2019s vision. With RMS, it was my vision but co-created with his, as well. I chose the format, set the tone, built the conversation, and cut the edit. The fact that it happened with an artist who treats every song like an honest conversation made this the perfect project for me to invest in. It proved to me that the instincts I\u2019d been developing as an assistant were ready to lead.',
+    proof: 'https://www.youtube.com/watch?v=T6civHHyHTo', proofLabel: 'Watch the full feature'
+  }
+};
+
+// PANEL LOGIC
+var panel = document.getElementById('panel');
+var backdrop = document.getElementById('panelBackdrop');
+var currentSlide = 0, totalSlides = 0;
+
+function openPanel(key) {
+  var p = projects[key]; if (!p) return;
+  var heroImg = document.getElementById('panelImg');
+  var carousel = document.getElementById('panelCarousel');
+  var track = document.getElementById('carouselTrack');
+  var dots = document.getElementById('carouselDots');
+  currentSlide = 0; totalSlides = 0; track.innerHTML = ''; dots.innerHTML = '';
+
+  if (p.carousel && p.carousel.length > 0) {
+    heroImg.style.display = 'none';
+    carousel.classList.add('active');
+    totalSlides = p.carousel.length;
+    p.carousel.forEach(function(src, i) {
+      var isVideo = /\.(mp4|mov|webm)$/i.test(src);
+      var el;
+      if (isVideo) {
+        el = document.createElement('video'); el.src = src; el.muted = true; el.loop = true; el.playsInline = true; el.preload = 'metadata';
+        el.style.width = '100%'; el.style.flexShrink = '0'; el.style.aspectRatio = '16/10'; el.style.objectFit = 'cover'; el.style.display = 'block';
+      } else {
+        el = document.createElement('img'); el.src = src; el.alt = p.title + ' - Photo ' + (i+1);
+      }
+      track.appendChild(el);
+      var dot = document.createElement('div'); dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dots.appendChild(dot);
+    });
+    track.style.transform = 'translateX(0)';
+  } else {
+    heroImg.style.display = ''; heroImg.className = 'panel-hero-img ' + p.img;
+    carousel.classList.remove('active');
+  }
+
+  document.getElementById('panelTag').textContent = p.tag;
+  document.getElementById('panelTitle').innerHTML = p.title;
+  document.getElementById('panelMeta').innerHTML = p.meta;
+  document.getElementById('panelRole').textContent = p.role;
+  document.getElementById('panelDesc').innerHTML = p.desc;
+
+  var list = document.getElementById('panelContribList'); list.innerHTML = '';
+  p.contributions.forEach(function(c) { var li = document.createElement('li'); li.textContent = c; list.appendChild(li); });
+
+  var whyEl = document.getElementById('panelWhy');
+  var whyText = document.getElementById('panelWhyText');
+  if (p.whyItMatters) { whyEl.style.display = ''; whyText.textContent = p.whyItMatters; }
+  else { whyEl.style.display = 'none'; }
+
+  var proofEl = document.getElementById('panelProof');
+  if (p.proof) {
+    proofEl.innerHTML = '<a href="' + p.proof + '" target="_blank" rel="noopener" class="panel-proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' + (p.proofLabel || 'View project') + '</a>';
+  } else {
+    proofEl.innerHTML = '<span class="panel-proof-pending">' + (p.proofLabel || 'Link coming soon') + '</span>';
+  }
+
+  panel.classList.add('open'); backdrop.classList.add('open');
+  document.body.style.overflow = 'hidden'; panel.scrollTop = 0;
+}
+
+function closePanel() {
+  document.querySelectorAll('#carouselTrack video').forEach(function(v) { v.pause(); });
+  panel.classList.remove('open'); backdrop.classList.remove('open'); document.body.style.overflow = '';
+}
+
+function moveCarousel(dir) {
+  if (totalSlides === 0) return;
+  // Pause any playing videos
+  var track = document.getElementById('carouselTrack');
+  track.querySelectorAll('video').forEach(function(v) { v.pause(); });
+  currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+  track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+  document.querySelectorAll('.carousel-dot').forEach(function(d, i) { d.className = 'carousel-dot' + (i === currentSlide ? ' active' : ''); });
+  // Auto-play video if current slide is a video
+  var current = track.children[currentSlide];
+  if (current && current.tagName === 'VIDEO') { current.currentTime = 0; current.play(); }
+}
+
+document.querySelectorAll('.bento-card').forEach(function(card) { card.addEventListener('click', function() { openPanel(card.dataset.project); }); });
+document.getElementById('panelClose').addEventListener('click', closePanel);
+backdrop.addEventListener('click', closePanel);
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closePanel();
+  if (e.key === 'ArrowRight' && panel.classList.contains('open')) moveCarousel(1);
+  if (e.key === 'ArrowLeft' && panel.classList.contains('open')) moveCarousel(-1);
+});
+document.getElementById('carouselPrev').addEventListener('click', function(e) { e.stopPropagation(); moveCarousel(-1); });
+document.getElementById('carouselNext').addEventListener('click', function(e) { e.stopPropagation(); moveCarousel(1); });
+
+// FILTER LOGIC
+var filterBtns = document.querySelectorAll('.filter-btn');
+var bentoCards = document.querySelectorAll('#bentoGrid .bento-card');
+filterBtns.forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    filterBtns.forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    var filter = btn.dataset.filter;
+    bentoCards.forEach(function(card, i) {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.classList.remove('hidden'); card.style.animation = 'none'; card.offsetHeight;
+        card.style.animation = 'fadeUp 0.5s cubic-bezier(0.16,1,0.3,1) forwards';
+        card.style.animationDelay = (i * 0.04) + 's';
+      } else { card.classList.add('hidden'); }
+    });
+  });
+});
+</script>
+</body>
+</html>

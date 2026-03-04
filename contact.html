@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Derrick — Contact</title>
+<meta name="description" content="Get in touch with Derrick for video production, creative direction, and brand storytelling collaborations.">
+<meta property="og:title" content="Derrick — Contact">
+<meta property="og:description" content="Let's talk about your next project.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="photos/headshot.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="photos/headshot.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0e0e0e; --surface: #161616; --surface-hover: #1e1e1e;
+    --border: #2a2a2a; --text: #e8e4de; --text-muted: #8a8580;
+    --accent: #c9ff57; --accent-dim: rgba(201, 255, 87, 0.08);
+    --font-body: 'DM Sans', sans-serif;
+    --font-display: 'Libre Caslon Display', serif;
+  }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
+
+  /* NAV */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 48px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(14,14,14,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 100; }
+  .nav-name { font-family: var(--font-display); font-size: 22px; letter-spacing: -0.02em; }
+  .nav-name a { color: var(--text); text-decoration: none; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+  /* CONTACT LAYOUT */
+  .contact { max-width: 560px; margin: 0 auto; padding: 80px 48px 160px; }
+
+  .contact-header { margin-bottom: 40px; }
+  .contact-header h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 48px); font-weight: 400; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 12px; }
+  .contact-header h1 em { font-style: italic; color: var(--accent); }
+  .contact-header p { font-size: 16px; color: var(--text-muted); line-height: 1.6; }
+
+  /* CONTACT LINKS */
+  .contact-links { display: flex; flex-direction: column; gap: 16px; }
+  .contact-link { display: inline-flex; align-items: center; gap: 12px; padding: 14px 24px; border: 1px solid var(--border); border-radius: 12px; color: var(--text); text-decoration: none; font-size: 15px; transition: all 0.3s; }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+  .contact-link svg { width: 18px; height: 18px; stroke: currentColor; fill: none; flex-shrink: 0; }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 32px 48px; display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); font-size: 13px; position: fixed; bottom: 0; left: 0; right: 0; background: rgba(14,14,14,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 50; }
+  footer a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+  footer a:hover { color: var(--text); }
+  .footer-links { display: flex; gap: 24px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; } .nav-links { gap: 20px; } .nav-links a { font-size: 12px; }
+    .contact { padding: 48px 24px 160px; }
+    footer { padding: 20px 24px; flex-direction: column; gap: 10px; }
+  }
+
+  /* FADE IN */
+  .fade-in { opacity: 0; transform: translateY(12px); animation: fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) forwards; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  .fade-in:nth-child(2) { animation-delay: 0.08s; }
+  .fade-in:nth-child(3) { animation-delay: 0.16s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name"><a href="index.html">Derrick</a></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="contact">
+  <div class="contact-header fade-in">
+    <h1>Let's <em>talk.</em></h1>
+    <p>Whether you're building something you want documented, or you just want to connect &mdash; I'd love to hear from you.</p>
+  </div>
+
+  <div class="contact-links fade-in">
+    <a href="mailto:chiu.derrick8@gmail.com" class="contact-link">
+      <svg viewBox="0 0 24 24" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      chiu.derrick8@gmail.com
+    </a>
+    <a href="https://www.instagram.com/_derrickchiu/" target="_blank" rel="noopener" class="contact-link">
+      <svg viewBox="0 0 24 24" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Instagram
+    </a>
+    <a href="https://linkedin.com/in/derrickchiu" target="_blank" rel="noopener" class="contact-link">
+      <svg viewBox="0 0 24 24" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+  </div>
+</div>
+
+<footer>
+  <span>&copy; 2026 Derrick</span>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/_derrickchiu/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://youtube.com/@derrickchiu" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://linkedin.com/in/derrickchiu" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:chiu.derrick8@gmail.com">Email</a>
+  </div>
+</footer>
+
+
+</body>
+</html>

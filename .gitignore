@@ -1,0 +1,7 @@
+.DS_Store
+*.docx
+IMG_*.jpeg
+Personal-Portrait.jpeg
+photos/*.png
+photos/*-original.mp4
+.claude/

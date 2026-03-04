@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Derrick — About</title>
+<meta name="description" content="Cultural Storyteller, Creative Producer & Strategist. Documentary-minded storytelling through video, writing, and creative strategy.">
+<meta property="og:title" content="Derrick — About">
+<meta property="og:description" content="Cultural Storyteller, Creative Producer & Strategist.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="photos/headshot.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="photos/headshot.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0e0e0e; --surface: #161616; --surface-hover: #1e1e1e;
+    --border: #2a2a2a; --text: #e8e4de; --text-muted: #8a8580;
+    --accent: #c9ff57; --accent-dim: rgba(201, 255, 87, 0.08);
+    --font-body: 'DM Sans', sans-serif;
+    --font-display: 'Libre Caslon Display', serif;
+  }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
+
+  /* NAV */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 48px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(14,14,14,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 100; }
+  .nav-name { font-family: var(--font-display); font-size: 22px; letter-spacing: -0.02em; }
+  .nav-name a { color: var(--text); text-decoration: none; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+  /* ABOUT LAYOUT */
+  .about { max-width: 680px; margin: 0 auto; padding: 80px 48px 160px; }
+
+  .about-header { margin-bottom: 48px; }
+  .about-header h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 52px); font-weight: 400; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 12px; }
+  .about-header h1 em { font-style: italic; color: var(--accent); }
+  .about-subtitle { font-size: 15px; color: var(--text-muted); letter-spacing: 0.02em; line-height: 1.5; }
+
+  /* BIO */
+  .about-bio p { font-size: 16px; line-height: 1.8; color: var(--text); margin-bottom: 24px; }
+  .about-bio p:last-child { margin-bottom: 0; }
+  .about-bio a { color: var(--accent); text-decoration: underline; text-decoration-color: rgba(201,255,87,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.3s; }
+  .about-bio a:hover { text-decoration-color: var(--accent); }
+  .about-bio .highlight { color: var(--accent); }
+
+  /* HEADSHOT */
+  .about-headshot { width: 180px; height: 180px; border-radius: 50%; overflow: hidden; margin-bottom: 40px; border: 2px solid var(--border); }
+  .about-headshot img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* SECTION DIVIDERS */
+  .about-section { margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--border); }
+  .about-section h2 { font-family: var(--font-display); font-size: 24px; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 20px; }
+
+  /* CURRENTLY */
+  .currently-list { display: flex; flex-direction: column; gap: 12px; }
+  .currently-item { font-size: 15px; line-height: 1.6; color: var(--text); padding-left: 20px; position: relative; }
+  .currently-item::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .currently-item a { color: var(--accent); text-decoration: underline; text-decoration-color: rgba(201,255,87,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.3s; }
+  .currently-item a:hover { text-decoration-color: var(--accent); }
+
+  /* CTA */
+  .about-cta { margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--border); }
+  .about-cta p { font-size: 16px; line-height: 1.8; color: var(--text); margin-bottom: 20px; }
+  .about-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border: 1px solid var(--border); border-radius: 100px; font-size: 14px; font-weight: 500; color: var(--text); text-decoration: none; transition: all 0.3s; font-family: var(--font-body); }
+  .about-cta-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 32px 48px; display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); font-size: 13px; position: fixed; bottom: 0; left: 0; right: 0; background: rgba(14,14,14,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 50; }
+  footer a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+  footer a:hover { color: var(--text); }
+  .footer-links { display: flex; gap: 24px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; } .nav-links { gap: 20px; } .nav-links a { font-size: 12px; }
+    .about { padding: 48px 24px 160px; }
+    footer { padding: 20px 24px; flex-direction: column; gap: 10px; }
+  }
+
+  /* FADE IN */
+  .fade-in { opacity: 0; transform: translateY(12px); animation: fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) forwards; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  .fade-in:nth-child(2) { animation-delay: 0.08s; }
+  .fade-in:nth-child(3) { animation-delay: 0.16s; }
+  .fade-in:nth-child(4) { animation-delay: 0.24s; }
+  .fade-in:nth-child(5) { animation-delay: 0.32s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name"><a href="index.html">Derrick</a></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Work</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="about">
+  <div class="about-header fade-in">
+    <h1>What's good, I'm <em>Derrick.</em></h1>
+    <div class="about-subtitle">Cultural Storyteller / Creative Producer &amp; Strategist</div>
+  </div>
+
+  <div class="about-headshot fade-in">
+    <img src="photos/headshot.jpg" alt="Derrick">
+  </div>
+
+  <div class="about-bio fade-in">
+    <p>I tell stories about people who build things with their hands, their communities, and their convictions. Through video, writing, and creative strategy, I work with founders, artists, and makers to surface the deeper narratives behind what they do, the kind that don't show up in press coverage or social feeds.</p>
+
+    <p>I'm drawn to the spaces where culture is being made in real time: a coffee roaster whose activism shaped his entire business philosophy. A painter working through The Grapes of Wrath in her home studio. An ice cream maker whose flavors trace a line from Tanzania to Oakland. A musician from New Jersey who treats every track like an audio journal. I show up with genuine curiosity, earn the conversation before I ever turn the camera on, and find the thread that makes the story worth telling.</p>
+  </div>
+
+  <div class="about-section about-bio fade-in">
+    <h2>The backstory</h2>
+    <p>I spent nearly a decade in tech, building systems, partnerships, and revenue. The work taught me a lot. But the most interesting part was always the conversations, not the dashboards. The founders I admired most weren't optimizing for metrics. They were building something they believed in and figuring out how to bring people along for the ride. I wanted to tell those stories instead of just watching them happen.</p>
+
+    <p>That instinct became <a href="https://www.archival.live" target="_blank" rel="noopener">Archival Live</a>, a documentary storytelling studio I founded to slow things down long enough to notice the work, the rituals, and the people behind them before they're flattened by feeds or forgotten by time.</p>
+
+    <p>Today I'm producing documentary work with <a href="https://peakbound.studio" target="_blank" rel="noopener">Peakbound Studios</a> and <a href="https://michaelareiner.com" target="_blank" rel="noopener">Reiner Films</a>, directing my own projects, and writing in-depth brand stories for founders and makers across the Bay Area, all through a studio rooted in resonance over perfection, connection over content.</p>
+  </div>
+
+  <div class="about-cta fade-in">
+    <p>If you're building something real, something physical, relational, and alive with soul, I'd love to work together.</p>
+    <a href="contact.html" class="about-cta-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Get in touch
+    </a>
+  </div>
+</div>
+
+<footer>
+  <span>&copy; 2026 Derrick</span>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/_derrickchiu/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://youtube.com/@derrickchiu" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://linkedin.com/in/derrickchiu" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:chiu.derrick8@gmail.com">Email</a>
+  </div>
+</footer>
+
+</body>
+</html>
