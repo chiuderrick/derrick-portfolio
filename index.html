@@ -31,6 +31,7 @@
   nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 48px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(14,14,14,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 100; }
   .nav-name { font-family: var(--font-display); font-size: 22px; letter-spacing: -0.02em; }
   .nav-name a { color: var(--text); text-decoration: none; }
+  .nav-studio { font-family: var(--font-body); font-size: 13px; font-weight: 400; color: var(--text-muted); letter-spacing: 0; }
   .nav-links { display: flex; gap: 32px; list-style: none; }
   .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; transition: color 0.3s; }
   .nav-links a:hover, .nav-links a.active { color: var(--text); }
@@ -40,9 +41,7 @@
   .page-header h1 { font-family: var(--font-display); font-size: clamp(48px, 6vw, 72px); font-weight: 400; letter-spacing: -0.03em; line-height: 1; margin-bottom: 16px; }
   .page-header h1 em { font-style: italic; color: var(--accent); }
   .page-header p { color: var(--text-muted); font-size: 16px; max-width: 500px; line-height: 1.6; }
-  .now-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(201,255,87,0.06); border: 1px solid rgba(201,255,87,0.15); padding: 6px 14px; border-radius: 100px; font-size: 12px; color: var(--accent); margin-top: 24px; font-weight: 500; }
-  .now-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
-  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  .hero-second { font-family: var(--font-display); font-size: clamp(36px, 4.5vw, 54px); font-weight: 400; letter-spacing: -0.03em; line-height: 1; margin-bottom: 20px; color: var(--accent); }
 
   /* FILTERS */
   .filter-section { padding: 48px 48px 0; }
@@ -78,7 +77,8 @@
   /* Card text below image */
   .bento-info { padding: 16px 4px 0; }
   .bento-title { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; line-height: 1.25; color: var(--text); margin-bottom: 4px; }
-  .bento-teaser { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+  .bento-teaser { font-size: 13px; color: var(--text-muted); line-height: 1.4; margin-bottom: 6px; }
+  .bento-editorial { font-size: 12.5px; color: var(--text); line-height: 1.55; opacity: 0.75; }
 
   /* SLIDE-IN PANEL */
   .panel-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; opacity: 0; pointer-events: none; transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1); }
@@ -144,7 +144,7 @@
 <body>
 
 <nav>
-  <div class="nav-name"><a href="index.html">Derrick</a></div>
+  <div class="nav-name"><a href="index.html">Derrick Chiu</a> <span class="nav-studio">/ Archival Live</span></div>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Work</a></li>
     <li><a href="about.html">About</a></li>
@@ -153,9 +153,9 @@
 </nav>
 
 <div class="page-header">
-  <h1>Selected <em>Work</em></h1>
-  <p>Storytelling rooted in culture, community, and craft.</p>
-  <div class="now-badge"><span class="now-dot"></span> Founder, Archival Live: a documentary studio preserving the stories of makers, communities, and culture</div>
+  <h1>Every maker has a story worth <em>preserving.</em></h1>
+  <h2 class="hero-second">I help tell it.</h2>
+  <p>Creative direction and documentary storytelling for the people, brands, and spaces shaping culture — ten toes down.</p>
 </div>
 
 <div class="filter-section">
@@ -170,31 +170,31 @@
 <div class="bento-grid" id="bentoGrid">
   <div class="bento-card" data-category="video-production" data-project="peakbound-ramirez">
     <div class="bento-img-wrap"><div class="bento-img img-peakbound1"></div></div>
-    <div class="bento-info"><div class="bento-title">Peakbound Studios &times; Michele Ramirez</div><div class="bento-teaser">Documenting a painter's work exploring The Grapes of Wrath.</div></div>
+    <div class="bento-info"><div class="bento-title">Peakbound Studios &times; Michele Ramirez</div><div class="bento-teaser">Documenting a painter's work exploring The Grapes of Wrath.</div><div class="bento-editorial">Michele is painting the dignity Steinbeck wrote about. We followed her process to understand what this project means to her past and present.</div></div>
   </div>
   <div class="bento-card" data-category="video-production" data-project="peakbound-sunnydale">
     <div class="bento-img-wrap"><div class="bento-img img-peakbound2"></div></div>
-    <div class="bento-info"><div class="bento-title">Peakbound Studios &times; HOPE SF</div><div class="bento-teaser">Community voices along Mercy Housing's corridor.</div></div>
+    <div class="bento-info"><div class="bento-title">Peakbound Studios &times; HOPE SF</div><div class="bento-teaser">Community voices along Mercy Housing's corridor.</div><div class="bento-editorial">Real residents, real stories, no scripting. A project about what can be built when extraction isn't the goal.</div></div>
   </div>
   <div class="bento-card" data-category="video-production" data-project="reiner-fam">
     <div class="bento-img-wrap"><div class="bento-img img-reiner"></div></div>
-    <div class="bento-info"><div class="bento-title">Reiner Films &times; Food as Medicine</div><div class="bento-teaser">Community voices behind the Food as Medicine mission.</div></div>
+    <div class="bento-info"><div class="bento-title">Reiner Films &times; Food as Medicine</div><div class="bento-teaser">Community voices behind the Food as Medicine mission.</div><div class="bento-editorial">The people closest to food insecurity are also the ones with the clearest vision for fixing it. We let them speak.</div></div>
   </div>
   <div class="bento-card" data-category="direction-production" data-project="rms">
     <div class="bento-img-wrap"><div class="bento-img img-rms"></div></div>
-    <div class="bento-info"><div class="bento-title">RMS &mdash; Artist Feature</div><div class="bento-teaser">Identity through sound.</div></div>
+    <div class="bento-info"><div class="bento-title">RMS &mdash; Artist Feature</div><div class="bento-teaser">Identity through sound.</div><div class="bento-editorial">A cinematic conversation about an artist who's taking his pain and turning it into a space for others who've experienced something similar to heal.</div></div>
   </div>
   <div class="bento-card" data-category="brand-story-creative-direction" data-project="redbay">
     <div class="bento-img-wrap"><div class="bento-img img-redbay"></div></div>
-    <div class="bento-info"><div class="bento-title">Red Bay Coffee & Keba Konte</div><div class="bento-teaser">Liberation through commerce.</div></div>
+    <div class="bento-info"><div class="bento-title">Red Bay Coffee & Keba Konte</div><div class="bento-teaser">Liberation through commerce.</div><div class="bento-editorial">Keba doesn't just roast coffee — he's building an economy that looks like his community. We made a multimedia feature about what that actually takes.</div></div>
   </div>
   <div class="bento-card" data-category="brand-story-creative-direction" data-project="miharu">
     <div class="bento-img-wrap"><div class="bento-img img-miharu"></div></div>
-    <div class="bento-info"><div class="bento-title">Miharu Ice Cream & Dipen Pattni</div><div class="bento-teaser">Cultural memory you can taste.</div></div>
+    <div class="bento-info"><div class="bento-title">Miharu Ice Cream & Dipen Pattni</div><div class="bento-teaser">Cultural memory you can taste.</div><div class="bento-editorial">Dipen makes ice cream the way his family taught him — by hand, with memory as the main ingredient. This is a portrait of what gets lost when we scale too fast.</div></div>
   </div>
   <div class="bento-card" data-category="brand-story-creative-direction" data-project="euflora">
     <div class="bento-img-wrap"><div class="bento-img img-euflora"></div></div>
-    <div class="bento-info"><div class="bento-title">Euflora & Celeste Fabros</div><div class="bento-teaser">Community as business model.</div></div>
+    <div class="bento-info"><div class="bento-title">Euflora & Celeste Fabros</div><div class="bento-teaser">Community as business model.</div><div class="bento-editorial">Celeste turned a plant shop into a neighborhood anchor. We documented why that matters more than any growth metric.</div></div>
   </div>
 </div>
 
@@ -230,7 +230,7 @@
 </div>
 
 <footer>
-  <span>&copy; 2026 Derrick</span>
+  <span>&copy; 2026 Derrick Chiu / <a href="https://www.archival.live" target="_blank" rel="noopener">Archival Live</a></span>
   <div class="footer-links">
     <a href="https://www.instagram.com/_derrickchiu/" target="_blank" rel="noopener">Instagram</a>
     <a href="https://www.youtube.com/@derrickchiu8" target="_blank" rel="noopener">YouTube</a>

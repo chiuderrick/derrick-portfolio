@@ -28,6 +28,7 @@
   nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 48px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(14,14,14,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 100; }
   .nav-name { font-family: var(--font-display); font-size: 22px; letter-spacing: -0.02em; }
   .nav-name a { color: var(--text); text-decoration: none; }
+  .nav-studio { font-family: var(--font-body); font-size: 13px; font-weight: 400; color: var(--text-muted); letter-spacing: 0; }
   .nav-links { display: flex; gap: 32px; list-style: none; }
   .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; transition: color 0.3s; }
   .nav-links a:hover, .nav-links a.active { color: var(--text); }
@@ -38,7 +39,7 @@
   .about-header { margin-bottom: 48px; }
   .about-header h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 52px); font-weight: 400; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 12px; }
   .about-header h1 em { font-style: italic; color: var(--accent); }
-  .about-subtitle { font-size: 15px; color: var(--text-muted); letter-spacing: 0.02em; line-height: 1.5; }
+  .highlight-question { font-family: var(--font-display); font-size: 20px; line-height: 1.5; letter-spacing: -0.01em; color: var(--accent); margin-bottom: 32px; }
 
   /* BIO */
   .about-bio p { font-size: 16px; line-height: 1.8; color: var(--text); margin-bottom: 24px; }
@@ -93,7 +94,7 @@
 <body>
 
 <nav>
-  <div class="nav-name"><a href="index.html">Derrick</a></div>
+  <div class="nav-name"><a href="index.html">Derrick Chiu</a> <span class="nav-studio">/ Archival Live</span></div>
   <ul class="nav-links">
     <li><a href="index.html">Work</a></li>
     <li><a href="about.html" class="active">About</a></li>
@@ -104,7 +105,6 @@
 <div class="about">
   <div class="about-header fade-in">
     <h1>What's good, I'm <em>Derrick.</em></h1>
-    <div class="about-subtitle">Cultural Storyteller / Creative Producer &amp; Strategist</div>
   </div>
 
   <div class="about-headshot fade-in">
@@ -112,31 +112,32 @@
   </div>
 
   <div class="about-bio fade-in">
-    <p>I tell stories about people who build things with their hands, their communities, and their convictions. Through video, writing, and creative strategy, I work with founders, artists, and makers to surface the deeper narratives behind what they do, the kind that don't show up in press coverage or social feeds.</p>
+    <p>I spent 13 years in tech sales. I learned a lot. Grew accounts, built relationships, translated what people needed into what they didn't know how to ask for. But I was selling something I didn't believe in, and eventually I couldn't hide the disbelief. I wanted to play a game that required all of me.</p>
 
-    <p>I'm drawn to the spaces where culture is being made in real time: a coffee roaster whose activism shaped his entire business philosophy. A painter working through The Grapes of Wrath in her home studio. An ice cream maker whose flavors trace a line from Tanzania to Oakland. A musician from New Jersey who treats every track like an audio journal. I show up with genuine curiosity, earn the conversation before I ever turn the camera on, and find the thread that makes the story worth telling.</p>
+    <p>So I started <a href="https://www.archival.live" target="_blank" rel="noopener">Archival Live</a>.</p>
+
+    <p>Archival Live is a documentary studio focused on the people, brands, and spaces shaping culture from the inside. Makers, artists, builders, small business owners, community spaces. Mostly in the Bay Area, where I'm from, and where things worth preserving are disappearing faster than anyone can document them.</p>
   </div>
 
   <div class="about-section about-bio fade-in">
-    <h2>The backstory</h2>
-    <p>I spent nearly a decade in tech, building systems, partnerships, and revenue. The work taught me a lot. But the most interesting part was always the conversations, not the dashboards. The founders I admired most weren't optimizing for metrics. They were building something they believed in and figuring out how to bring people along for the ride. I wanted to tell those stories instead of just watching them happen.</p>
+    <p class="highlight-question">The question that drives the work: what's worth paying attention to before it disappears?</p>
 
-    <p>That instinct became <a href="https://www.archival.live" target="_blank" rel="noopener">Archival Live</a>, a documentary storytelling studio I founded to slow things down long enough to notice the work, the rituals, and the people behind them before they're flattened by feeds or forgotten by time.</p>
+    <p>My work provides a reflection for the most resonant parts of someone's story, helping them share that with those who resonate with them. I use video, photography, writing, and audio to do that, but the medium is always secondary to the relationship. Every project starts with listening. Not interviewing, not briefing. Listening. Understanding why someone does what they do, what it costs them, and what it gives back. The work comes from that conversation.</p>
 
-    <p>Today I'm producing documentary work with <a href="https://peakbound.studio" target="_blank" rel="noopener">Peakbound Studios</a> and <a href="https://michaelareiner.com" target="_blank" rel="noopener">Reiner Films</a>, directing my own projects, and writing in-depth brand stories for founders and makers across the Bay Area, all through a studio rooted in resonance over perfection, connection over content.</p>
+    <p>I believe less in perfection and more in presence. Less "content," more connection. The most meaningful stories happen in process, in the quiet moments between milestones. That's where I like to be.</p>
   </div>
 
   <div class="about-cta fade-in">
-    <p>If you're building something real, something physical, relational, and alive with soul, I'd love to work together.</p>
+    <p>If you're building something real, something physical, relational, and alive with soul, I'd love to hear about it.</p>
     <a href="contact.html" class="about-cta-btn">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      Get in touch
+      Let's talk
     </a>
   </div>
 </div>
 
 <footer>
-  <span>&copy; 2026 Derrick</span>
+  <span>&copy; 2026 Derrick Chiu / <a href="https://www.archival.live" target="_blank" rel="noopener">Archival Live</a></span>
   <div class="footer-links">
     <a href="https://www.instagram.com/_derrickchiu/" target="_blank" rel="noopener">Instagram</a>
     <a href="https://www.youtube.com/@derrickchiu8" target="_blank" rel="noopener">YouTube</a>
